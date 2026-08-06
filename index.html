@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="에르노아 듀인(ERNOA DEWIN) 니치 퍼퓸 핸드크림 공식 홈페이지">
+<meta name="keywords" content="에르노아 듀인, ERNOA DEWIN, 핸드크림, 니치 퍼퓸, 선물세트, 명절 선물, 성탄절 선물, Made in Korea">
+<meta property="og:title" content="ERNOA DEWIN | Premium Perfumed Hand Care">
+<meta property="og:description" content="손끝마다 향이 되고, 순간마다 추억이 된다.">
+<meta property="og:image" content="assets/main.jpg">
+<meta property="og:type" content="website">
+<title>ERNOA DEWIN | 에르노아 듀인</title>
+
+<style>
+:root{
+  --ivory:#fffdf8;
+  --cream:#f3eee6;
+  --ink:#1e1b18;
+  --gold:#b29569;
+  --line:rgba(30,27,24,.14);
+  --red:#9f1717;
+  --green:#73865b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:Arial,"맑은 고딕",sans-serif;line-height:1.7
+}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3{
+  font-family:Georgia,"맑은 고딕",serif;
+  font-weight:400;line-height:1.2
+}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 6%;
+  background:rgba(255,253,248,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)
+}
+.logo{font-family:Georgia,serif;font-size:21px;letter-spacing:3px}
+nav{display:flex;align-items:center;gap:20px;font-size:11px;letter-spacing:1.3px}
+nav a:hover{color:var(--gold)}
+.nav-shop{padding:10px 16px;background:var(--ink);color:#fff}
+
+.hero{
+  min-height:100vh;
+  padding:115px 6% 55px;
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:4vw;
+  align-items:center;
+  background:linear-gradient(135deg,#f7f1e8 0%,#fffdf8 58%,#eee3d7 100%)
+}
+.hero-copy{padding:20px 0}
+.eyebrow{
+  font-size:11px;letter-spacing:3px;font-weight:bold;color:var(--gold)
+}
+.hero h1{
+  font-size:clamp(42px,6vw,78px);
+  margin:14px 0 22px
+}
+.hero p{font-size:18px;max-width:620px;color:#5b534c}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.button{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:155px;padding:14px 24px;border:1px solid currentColor;
+  font-size:12px;letter-spacing:1px;transition:.2s
+}
+.button:hover{transform:translateY(-2px)}
+.button.dark{background:var(--ink);color:white;border-color:var(--ink)}
+.button.gold{background:var(--gold);color:white;border-color:var(--gold)}
+.button.outline-dark{color:var(--ink);border-color:var(--ink)}
+.hero-image{
+  min-height:680px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(65,48,31,.12)
+}
+.hero-image img{
+  width:100%;
+  height:100%;
+  max-height:690px;
+  object-fit:contain;
+  object-position:center;
+  background:#fff
+}
+
+section{padding:100px 7%}
+.section-head{max-width:780px;margin-bottom:48px}
+.section-head h2{font-size:clamp(36px,5vw,62px);margin:8px 0 15px}
+
+.brand{background:var(--cream)}
+.two-col{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:7vw;align-items:center
+}
+.story{font-size:19px}
+.quote{
+  background:#211d19;color:white;padding:60px;min-height:380px;
+  display:flex;flex-direction:column;justify-content:space-between
+}
+.quote strong{font-family:Georgia,serif;font-size:42px;font-weight:400}
+
+.product-block{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:620px;margin-bottom:65px;background:#f6f1ea
+}
+.product-block.reverse .photo{order:2}
+.photo{min-height:560px;overflow:hidden}
+.photo img{transition:transform .6s}
+.product-block:hover .photo img{transform:scale(1.025)}
+.product-copy{
+  padding:7vw;display:flex;flex-direction:column;justify-content:center
+}
+.product-copy h3{font-size:clamp(40px,5vw,68px);margin:0}
+.product-copy ul{list-style:none;padding:0;margin-top:25px}
+.product-copy li{padding:10px 0;border-bottom:1px solid var(--line)}
+
+.gift{background:#1b1815;color:white}
+.gift-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center
+}
+.gift-photo{height:620px;background:white;overflow:hidden}
+.gift-photo img{transition:transform .6s}
+.gift-photo:hover img{transform:scale(1.025)}
+
+.seasonal{background:#faf6ef}
+.season-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.season-card{background:white;border:1px solid var(--line);overflow:hidden}
+.season-image{height:520px;background:white;overflow:hidden}
+.season-image img{transition:transform .6s}
+.season-card:hover img{transform:scale(1.025)}
+.season-copy{padding:34px}
+.season-copy h3{font-size:34px;margin:0 0 12px}
+.season-card.holiday{border-top:5px solid var(--green)}
+.season-card.christmas{border-top:5px solid var(--red)}
+
+.exhibition{background:#fff}
+.exhibition-wrap{
+  display:grid;grid-template-columns:.72fr 1.28fr;
+  gap:55px;align-items:center
+}
+.exhibition-copy h2{font-size:clamp(38px,5vw,64px);margin:8px 0 18px}
+.exhibition-copy p{color:#655e57}
+.exhibition-meta{margin-top:28px;border-top:1px solid var(--line)}
+.exhibition-meta div{
+  display:flex;justify-content:space-between;gap:20px;
+  padding:14px 0;border-bottom:1px solid var(--line)
+}
+.exhibition-meta strong{font-size:12px;letter-spacing:1px}
+.exhibition-image{
+  min-height:620px;border:1px solid var(--line);
+  background:#f7f4ef;overflow:hidden
+}
+.exhibition-image img{
+  object-fit:contain;background:#f7f4ef;transition:transform .6s
+}
+.exhibition-image:hover img{transform:scale(1.012)}
+
+.features{background:#eee7dd}
+.feature-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line)
+}
+.feature{padding:30px 24px;border-right:1px solid var(--line)}
+.feature:last-child{border-right:0}
+.feature span{color:var(--gold);font-size:11px}
+
+.shop{
+  color:white;text-align:center;
+  background:linear-gradient(135deg,#a28b69,#2a241f)
+}
+.shop-inner{max-width:850px;margin:auto}
+.shop h2{font-size:clamp(40px,6vw,72px);margin:10px 0 18px}
+.shop p{font-size:18px;color:rgba(255,255,255,.82)}
+
+.global-panel{
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  padding:60px;background:#f5f0e8
+}
+.global-panel dl{margin:0}
+.global-panel dl div{
+  display:flex;justify-content:space-between;
+  border-bottom:1px solid var(--line);padding:16px 0
+}
+.global-panel dd{margin:0;font-weight:bold}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr}
+.contact-card{padding:55px;background:var(--cream)}
+.contact-card.dark{background:#9d8768;color:white}
+.label{
+  font-size:9px;letter-spacing:2px;color:var(--gold);
+  margin:18px 0 3px
+}
+.contact-card.dark .label{color:#f4dfbd}
+.contact-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+.floating-shop{
+  position:fixed;right:24px;bottom:24px;z-index:60;
+  display:flex;align-items:center;gap:8px;
+  padding:14px 19px;background:#03c75a;color:white;
+  border-radius:999px;font-size:13px;font-weight:bold;
+  box-shadow:0 10px 30px rgba(0,0,0,.22)
+}
+footer{
+  padding:35px 7%;background:#111;color:#aaa;font-size:11px;
+  display:flex;justify-content:space-between
+}
+
+@media(max-width:1000px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr;padding-top:105px}
+  .hero-copy{text-align:center}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-image{min-height:auto}
+  .hero-image img{max-height:none}
+  .two-col,.product-block,.gift-grid,.contact-grid,.global-panel,.season-grid,.exhibition-wrap{
+    grid-template-columns:1fr
+  }
+  .product-block.reverse .photo{order:0}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .photo,.gift-photo,.season-image{min-height:430px;height:430px}
+  .exhibition-image{min-height:auto}
+}
+@media(max-width:520px){
+  section{padding:75px 22px}
+  header{padding:16px 20px}
+  .hero{padding:100px 18px 45px}
+  .hero h1{font-size:42px}
+  .hero-image{padding:10px}
+  .hero-actions{flex-direction:column;align-items:center}
+  .product-copy{padding:45px 28px}
+  .quote{padding:40px;min-height:310px}
+  .feature-grid{grid-template-columns:1fr}
+  .floating-shop{right:14px;bottom:14px;padding:12px 16px}
+  footer{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="#home">ERNOA DEWIN</a>
+  <nav>
+    <a href="#brand">BRAND</a>
+    <a href="#products">PRODUCTS</a>
+    <a href="#gift">GIFT</a>
+    <a href="#season">SEASON</a>
+    <a href="#exhibition">EXHIBITION</a>
+    <a href="#global">GLOBAL</a>
+    <a href="#contact">CONTACT</a>
+    <a class="nav-shop" href="https://smartstore.naver.com/ernoadewin"
+       target="_blank" rel="noopener noreferrer">SHOP</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">PREMIUM PERFUMED HAND CARE</div>
+    <h1>손끝마다 향이 되고,<br>순간마다 추억이 된다.</h1>
+    <p>
+      니치 퍼퓸에서 영감을 받은 깊고 우아한 향과
+      미백·주름개선 기능성을 담은 프리미엄 핸드크림.
+    </p>
+    <div class="hero-actions">
+      <a class="button outline-dark" href="#products">제품 보기</a>
+      <a class="button dark"
+         href="https://smartstore.naver.com/ernoadewin"
+         target="_blank" rel="noopener noreferrer">스마트스토어 구매</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/main.jpg" alt="에르노아 듀인 핸드크림 메인 이미지">
+  </div>
+</section>
+
+<section class="brand" id="brand">
+  <div class="two-col">
+    <div class="story">
+      <div class="eyebrow">OUR BRAND</div>
+      <h2>향을 경험하는 핸드케어</h2>
+      <p>
+        에르노아 듀인(ERNOA DEWIN)은 니치 퍼퓸의 감성과
+        기능성 스킨케어를 결합한 프리미엄 핸드케어 브랜드입니다.
+      </p>
+      <p>
+        일상 속에서 깊이 있는 향과 부드러운 보습을 함께 경험할 수 있는
+        새로운 핸드케어 라이프스타일을 제안합니다.
+      </p>
+    </div>
+    <div class="quote">
+      <span>ERNOA DEWIN</span>
+      <strong>Scent becomes<br>a memory.</strong>
+      <small>MADE IN KOREA</small>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-head">
+    <div class="eyebrow">SIGNATURE COLLECTION</div>
+    <h2>두 가지 향, 두 가지 기억</h2>
+  </div>
+
+  <article class="product-block">
+    <div class="photo"><img src="assets/lune.jpg" alt="뤼느떼 핸드크림 사용 모습"></div>
+    <div class="product-copy">
+      <div class="eyebrow">01 · PEONY & MUSK</div>
+      <h3>LUNE TÊE</h3>
+      <p>부드러운 피오니와 포근한 머스크가 어우러진 우아하고 섬세한 향.</p>
+      <ul>
+        <li>니치 퍼퓸에서 영감을 받은 향</li>
+        <li>빠른 흡수와 끈적임 없는 사용감</li>
+        <li>미백·주름개선 이중 기능성</li>
+        <li>50 ml · Made in Korea</li>
+      </ul>
+      <a class="button dark" href="https://smartstore.naver.com/ernoadewin"
+         target="_blank" rel="noopener noreferrer">구매하기</a>
+    </div>
+  </article>
+
+  <article class="product-block reverse">
+    <div class="photo"><img src="assets/rose.jpg" alt="리 로젤르베일 핸드크림 사용 모습"></div>
+    <div class="product-copy">
+      <div class="eyebrow">02 · ROSE & FLORAL</div>
+      <h3>LE ROSELVEIL</h3>
+      <p>풍성한 로즈와 플로럴 무드가 깊고 우아한 잔향으로 이어지는 세련된 향.</p>
+      <ul>
+        <li>오래 지속되는 고급스러운 향</li>
+        <li>시어버터와 글리세린 등 보습 성분</li>
+        <li>미백·주름개선 이중 기능성</li>
+        <li>50 ml · Made in Korea</li>
+      </ul>
+      <a class="button dark" href="https://smartstore.naver.com/ernoadewin"
+         target="_blank" rel="noopener noreferrer">구매하기</a>
+    </div>
+  </article>
+</section>
+
+<section class="gift" id="gift">
+  <div class="gift-grid">
+    <div class="gift-photo"><img src="assets/gift.jpg" alt="에르노아 듀인 프리미엄 선물세트"></div>
+    <div>
+      <div class="eyebrow">PREMIUM GIFT COLLECTION</div>
+      <h2 style="font-size:clamp(38px,5vw,64px)">소중한 순간을 위한 선물</h2>
+      <p>핸드크림 2종, 프리미엄 선물 상자, 파우치, 메시지카드가 어우러진 선물 구성입니다.</p>
+      <a class="button gold" href="https://smartstore.naver.com/ernoadewin"
+         target="_blank" rel="noopener noreferrer">선물세트 구매</a>
+    </div>
+  </div>
+</section>
+
+<section class="seasonal" id="season">
+  <div class="section-head">
+    <div class="eyebrow">SEASONAL GIFT COLLECTION</div>
+    <h2>계절과 기념일을 위한 패키지</h2>
+  </div>
+  <div class="season-grid">
+    <article class="season-card holiday">
+      <div class="season-image"><img src="assets/holiday.jpg" alt="에르노아 듀인 명절 패키지"></div>
+      <div class="season-copy">
+        <h3>명절 패키지</h3>
+        <p>은은한 그린 리본으로 완성한 설날·추석 시즌 선물 패키지입니다.</p>
+        <a class="button dark" href="https://smartstore.naver.com/ernoadewin"
+           target="_blank" rel="noopener noreferrer">구매사이트 보기</a>
+      </div>
+    </article>
+    <article class="season-card christmas">
+      <div class="season-image"><img src="assets/christmas.jpg" alt="에르노아 듀인 성탄절 패키지"></div>
+      <div class="season-copy">
+        <h3>성탄절 패키지</h3>
+        <p>레드 컬러 리본으로 포인트를 준 연말 시즌 선물 패키지입니다.</p>
+        <a class="button dark" href="https://smartstore.naver.com/ernoadewin"
+           target="_blank" rel="noopener noreferrer">구매사이트 보기</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="exhibition" id="exhibition">
+  <div class="exhibition-wrap">
+    <div class="exhibition-copy">
+      <div class="eyebrow">EXHIBITION & EVENTS</div>
+      <h2>현장에서 만난<br>에르노아 듀인</h2>
+      <p>
+        에르노아 듀인은 2026 뷰티&헬스케어쇼에 참가하여
+        시그니처 니치 퍼퓸 핸드크림과 프리미엄 선물 패키지를 선보였습니다.
+      </p>
+      <div class="exhibition-meta">
+        <div><strong>EVENT</strong><span>2026 뷰티&헬스케어쇼</span></div>
+        <div><strong>VENUE</strong><span>송도컨벤시아</span></div>
+        <div><strong>BOOTH</strong><span>A109</span></div>
+      </div>
+    </div>
+    <div class="exhibition-image">
+      <img src="assets/exhibition-collage.png"
+           alt="2026 뷰티&헬스케어쇼 에르노아 듀인 박람회 전시">
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="section-head">
+    <div class="eyebrow">WHY ERNOA DEWIN</div>
+    <h2>향과 피부 관리의 균형</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="feature"><span>01</span><h3>PERFUMED</h3><p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향</p></div>
+    <div class="feature"><span>02</span><h3>FUNCTIONAL</h3><p>미백과 주름개선의 이중 기능성 핸드케어</p></div>
+    <div class="feature"><span>03</span><h3>MOISTURIZING</h3><p>건조한 손을 위한 촉촉하고 부드러운 보습</p></div>
+    <div class="feature"><span>04</span><h3>PREMIUM GIFT</h3><p>선물하기 좋은 감각적인 프리미엄 패키지</p></div>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="shop-inner">
+    <div class="eyebrow">OFFICIAL ONLINE STORE</div>
+    <h2>ERNOA DEWIN SHOP</h2>
+    <p>에르노아 듀인 핸드크림과 시즌 선물 패키지를 네이버 스마트스토어에서 만나보세요.</p>
+    <a class="button gold" href="https://smartstore.naver.com/ernoadewin"
+       target="_blank" rel="noopener noreferrer">네이버 스마트스토어 바로가기</a>
+  </div>
+</section>
+
+<section id="global">
+  <div class="global-panel">
+    <div>
+      <div class="eyebrow">GLOBAL BUSINESS</div>
+      <h2>Worldwide Distribution</h2>
+      <p>에르노아 듀인은 해외 바이어와 유통 파트너의 제품 공급 및 수출 상담을 환영합니다.</p>
+    </div>
+    <dl>
+      <div><dt>MOQ</dt><dd>300 pcs</dd></div>
+      <div><dt>Lead Time</dt><dd>약 20–30일</dd></div>
+      <div><dt>Packaging</dt><dd>개별 단상자</dd></div>
+      <div><dt>Origin</dt><dd>Republic of Korea</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <div class="eyebrow">CONTACT</div>
+    <h2>제품 및 유통 문의</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="label">COMPANY</div>
+      <h3>에르노아 듀인</h3>
+      <div class="label">BRAND</div>
+      <h3>ERNOA DEWIN</h3>
+      <div class="label">TEL</div>
+      <p><a href="tel:0322668289">032-266-8289</a></p>
+      <div class="label">ADDRESS</div>
+      <p>인천시 서구 중봉대로 490, 7층 785호<br>(청라 더리브티아모지식산업센터)</p>
+    </div>
+    <div class="contact-card dark">
+      <div class="label">EMAIL</div>
+      <h3 style="font-size:30px">ernoadewin@naver.com</h3>
+      <p>국내 유통, 해외 수출, 제품 공급 및 협업 문의를 보내주세요.</p>
+      <div class="contact-buttons">
+        <a class="button dark" href="mailto:ernoadewin@naver.com">이메일 보내기</a>
+        <a class="button gold" href="https://smartstore.naver.com/ernoadewin"
+           target="_blank" rel="noopener noreferrer">구매사이트</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="floating-shop"
+   href="https://smartstore.naver.com/ernoadewin"
+   target="_blank" rel="noopener noreferrer">🛒 구매하기</a>
+
+<footer>
+  <strong>에르노아 듀인 | ERNOA DEWIN</strong>
+  <span>© 2026 ERNOA DEWIN. All rights reserved.</span>
+</footer>
+
+</body>
+</html>

@@ -50,8 +50,22 @@ h1,h2,h3{
   min-height:100vh;padding:115px 6% 55px;
   display:grid;grid-template-columns:.82fr 1.18fr;
   gap:4vw;align-items:center;
-  background:linear-gradient(135deg,#f7f1e8 0%,#fffdf8 58%,#eee3d7 100%)
+  background:
+    radial-gradient(circle at 78% 24%, rgba(255,255,255,.95) 0 9%, rgba(255,255,255,.38) 26%, transparent 46%),
+    radial-gradient(circle at 18% 72%, rgba(226,207,188,.28) 0 10%, transparent 38%),
+    linear-gradient(135deg,#fffdf8 0%,#f6efe6 42%,#fffaf3 72%,#efe2d5 100%)
 }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.18),transparent 36%),
+    radial-gradient(circle at 64% 52%,rgba(255,246,231,.32),transparent 36%);
+  mix-blend-mode:screen
+}
+.hero > *{position:relative;z-index:1}
 .hero-copy{padding:20px 0}
 .hero h1{font-size:clamp(42px,6vw,78px);margin:14px 0 22px}
 .hero-description{font-size:18px;max-width:620px;color:#5b534c}
@@ -226,23 +240,48 @@ footer{
   width:48px;height:48px;border:0;background:transparent;
   color:white;font-size:40px;cursor:pointer
 }
-.petals{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
-.petals i{
-  position:absolute;top:-10%;width:12px;height:18px;
-  border-radius:70% 30% 70% 30%;
-  background:rgba(241,194,201,.34);
-  animation:fall 15s linear infinite
+.petals{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:3;
+  overflow:hidden
 }
-.petals i:nth-child(1){left:8%;animation-delay:0s}
-.petals i:nth-child(2){left:26%;animation-delay:4s;animation-duration:18s}
-.petals i:nth-child(3){left:48%;animation-delay:8s}
-.petals i:nth-child(4){left:66%;animation-delay:2s;animation-duration:20s}
-.petals i:nth-child(5){left:82%;animation-delay:6s}
-.petals i:nth-child(6){left:94%;animation-delay:10s;animation-duration:17s}
+.petals i{
+  position:absolute;
+  top:-12%;
+  width:12px;
+  height:18px;
+  border-radius:72% 28% 66% 34%;
+  background:linear-gradient(145deg,rgba(248,214,220,.58),rgba(225,175,188,.22));
+  box-shadow:0 2px 8px rgba(195,143,158,.12);
+  animation:fall 16s linear infinite;
+  opacity:.72
+}
+.petals i:nth-child(1){left:4%;animation-delay:0s;animation-duration:17s;transform:scale(.72)}
+.petals i:nth-child(2){left:12%;animation-delay:5s;animation-duration:20s;transform:scale(1.05)}
+.petals i:nth-child(3){left:22%;animation-delay:9s;animation-duration:18s;transform:scale(.82)}
+.petals i:nth-child(4){left:33%;animation-delay:2s;animation-duration:22s;transform:scale(1.2)}
+.petals i:nth-child(5){left:44%;animation-delay:7s;animation-duration:19s;transform:scale(.68)}
+.petals i:nth-child(6){left:55%;animation-delay:12s;animation-duration:21s;transform:scale(1)}
+.petals i:nth-child(7){left:64%;animation-delay:4s;animation-duration:18s;transform:scale(.9)}
+.petals i:nth-child(8){left:72%;animation-delay:10s;animation-duration:23s;transform:scale(1.18)}
+.petals i:nth-child(9){left:80%;animation-delay:1s;animation-duration:20s;transform:scale(.76)}
+.petals i:nth-child(10){left:87%;animation-delay:8s;animation-duration:17s;transform:scale(1.08)}
+.petals i:nth-child(11){left:93%;animation-delay:13s;animation-duration:22s;transform:scale(.86)}
+.petals i:nth-child(12){left:98%;animation-delay:6s;animation-duration:19s;transform:scale(1.14)}
 @keyframes fall{
-  0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}
-  10%{opacity:.8}
-  100%{transform:translate3d(80px,115vh,0) rotate(430deg);opacity:0}
+  0%{
+    transform:translate3d(0,-12vh,0) rotate(0deg);
+    opacity:0
+  }
+  8%{opacity:.72}
+  35%{transform:translate3d(38px,35vh,0) rotate(130deg)}
+  68%{transform:translate3d(-28px,76vh,0) rotate(275deg)}
+  100%{
+    transform:translate3d(72px,118vh,0) rotate(430deg);
+    opacity:0
+  }
 }
 
 .hero-visual{

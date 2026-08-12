@@ -7,15 +7,86 @@
 <meta name="description" content="ERNOA DEWIN 니치 퍼퓸 핸드크림 공식 홈페이지">
 <style>
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#f7f2ea}
-  body{font-family:Arial,'Noto Sans KR',sans-serif}
-  .main-design{display:block;width:100%;height:auto;margin:0 auto}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f7f2ea;font-family:Arial,"Noto Sans KR",sans-serif}
+  .page{position:relative;width:100%;max-width:none;margin:0 auto}
+  .page img{display:block;width:100%;height:auto}
+  .hotspot{
+    position:absolute; display:block; z-index:5;
+    background:transparent; border:0; cursor:pointer;
+    text-indent:-9999px; overflow:hidden;
+  }
+  .hotspot:focus-visible{
+    outline:2px solid #111; outline-offset:2px;
+  }
+  /* 상단 메뉴 */
+  .brand-menu{left:31.0%;top:1.9%;width:5.7%;height:2.7%}
+  .products-menu{left:38.6%;top:1.9%;width:7.6%;height:2.7%}
+  .gift-menu{left:47.4%;top:1.9%;width:4.8%;height:2.7%}
+  .season-menu{left:53.5%;top:1.9%;width:6.0%;height:2.7%}
+  .exhibition-menu{left:60.9%;top:1.9%;width:8.8%;height:2.7%}
+  .global-menu{left:70.8%;top:1.9%;width:6.4%;height:2.7%}
+  .contact-menu{left:78.7%;top:1.9%;width:7.5%;height:2.7%}
+
+  /* 본문 버튼 */
+  .discover{left:6.4%;top:35.3%;width:19%;height:3.7%}
+  .lune-more{left:3.1%;top:56.7%;width:10.3%;height:2.6%}
+  .about-more{left:38.6%;top:62.3%;width:21.0%;height:3.4%}
+  .rose-more{left:65.0%;top:56.7%;width:10.8%;height:2.6%}
+  .gift-more{left:6.2%;top:92.1%;width:18.3%;height:3.0%}
+
+  /* 눈에 보이지 않는 스크롤 목적지 */
+  .anchor{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
+  #products{top:47.5%}
+  #brand{top:51.5%}
+  #gift{top:80.0%}
+  #bottom{top:98.5%}
+
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%);
+    background:rgba(20,20,20,.92);color:#fff;padding:12px 18px;
+    border-radius:999px;font-size:14px;opacity:0;pointer-events:none;
+    transition:.2s;z-index:20;
+  }
+  .toast.show{opacity:1}
 </style>
 </head>
 <body>
-  <main>
-    <img class="main-design" src="main-design.png"
-         alt="ERNOA DEWIN 에르노아듀인 니치 퍼퓸 핸드크림 홈페이지 메인 디자인">
-  </main>
+  <div class="page">
+    <img src="main-design.png" alt="ERNOA DEWIN 에르노아듀인 니치 퍼퓸 핸드크림 홈페이지">
+
+    <span id="products" class="anchor"></span>
+    <span id="brand" class="anchor"></span>
+    <span id="gift" class="anchor"></span>
+    <span id="bottom" class="anchor"></span>
+
+    <a class="hotspot brand-menu" href="#brand" aria-label="브랜드">BRAND</a>
+    <a class="hotspot products-menu" href="#products" aria-label="제품">PRODUCTS</a>
+    <a class="hotspot gift-menu" href="#gift" aria-label="선물">GIFT</a>
+
+    <button class="hotspot season-menu pending" type="button" aria-label="시즌">SEASON</button>
+    <button class="hotspot exhibition-menu pending" type="button" aria-label="전시회">EXHIBITION</button>
+    <button class="hotspot global-menu pending" type="button" aria-label="글로벌">GLOBAL</button>
+    <button class="hotspot contact-menu pending" type="button" aria-label="문의">CONTACT</button>
+
+    <a class="hotspot discover" href="#products" aria-label="제품 더 보기">DISCOVER MORE</a>
+    <a class="hotspot lune-more" href="#products" aria-label="Lune Tée 더 보기">VIEW MORE</a>
+    <a class="hotspot about-more" href="#brand" aria-label="ERNOA DEWIN 브랜드 소개">ABOUT ERNOA DEWIN</a>
+    <a class="hotspot rose-more" href="#products" aria-label="Le RoselVeil 더 보기">VIEW MORE</a>
+    <a class="hotspot gift-more" href="#gift" aria-label="선물세트 더 보기">DISCOVER GIFT SET</a>
+  </div>
+
+  <div id="toast" class="toast">해당 메뉴는 준비 중입니다.</div>
+
+<script>
+document.querySelectorAll('.pending').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const t=document.getElementById('toast');
+    t.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer=setTimeout(()=>t.classList.remove('show'),1600);
+  });
+});
+</script>
 </body>
 </html>

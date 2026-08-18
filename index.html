@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ERNOA DEWIN</title>
 <style>
+/* =========================================================
+   ERNOA DEWIN 홈페이지 수정 영역
+   아래 값만 바꾸면 전체 디자인을 쉽게 수정할 수 있습니다.
+   ========================================================= */
+:root{
+  --bg:#ffffff;              /* 전체 배경 */
+  --soft-bg:#faf7f2;         /* 제품 설명 배경 */
+  --gift-bg:#f1ebe2;         /* 선물세트 배경 */
+  --text:#171717;            /* 기본 글자색 */
+  --subtext:#555555;         /* 설명 글자색 */
+  --section-space:78px;      /* 섹션 위/아래 여백 */
+  --title-size:38px;         /* 큰 제목 크기 */
+}
+/*
+  이미지 교체 방법:
+  hero.png              = 메인 화면
+  lune_product.jpg      = 뤼느떼 본품
+  rose_product.jpg      = 리 로젤르베일 본품
+  gift_premium.jpg?v=10      = 프리미엄 선물세트
+  gift_season.jpg?v=10       = 명절 선물세트
+  gift_christmas.jpg?v=10    = 크리스마스 선물세트
+  exhibition-collage.png = 박람회 사진
+
+  글자 수정 방법:
+  이 index.html을 메모장/VS Code에서 열고
+  화면에 보이는 문구를 검색해서 원하는 글자로 바꾸면 됩니다.
+*/
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;color:#171717;background:#fff;font-family:Arial,"Noto Sans KR",sans-serif}
@@ -22,8 +50,8 @@ header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;
 }
 
 .sec{padding:78px 6%;background:#fff}
-.title{text-align:center;font:38px Georgia,"Times New Roman",serif;margin:0 0 12px}
-.sub{text-align:center;color:#555;margin:0 0 42px}
+.title{text-align:center;font:38px Georgia,"Times New Roman",serif;margin:0 0 12px;word-spacing:0;letter-spacing:0}
+.sub{text-align:center;color:#555;margin:0 0 42px;word-spacing:0;letter-spacing:0;white-space:normal}
 
 /* Product description with actual product photos */
 .products{
@@ -90,6 +118,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
 </head>
 <body>
 
+<!-- ===== 상단 로고 / 메뉴 수정 ===== -->
 <header>
   <div class="logo">ERNOA DEWIN</div>
   <nav class="nav">
@@ -100,8 +129,10 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   </nav>
 </header>
 
+<!-- ===== 메인 이미지 수정: hero.png ===== -->
 <section class="hero" aria-label="ERNOA DEWIN 메인 이미지"></section>
 
+<!-- ===== 제품 소개 / 본품 사진 / 설명 수정 ===== -->
 <section class="sec" id="brand">
   <h2 class="title">ABOUT PRODUCT</h2>
   <p class="sub">제품 소개</p>
@@ -137,6 +168,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   </div>
 </section>
 
+<!-- ===== 주요 성분 수정 ===== -->
 <section class="sec">
   <h2 class="title">KEY INGREDIENTS</h2>
   <p class="sub">보습과 기능성을 위한 주요 성분</p>
@@ -148,13 +180,14 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   </div>
 </section>
 
+<!-- ===== 선물세트 사진 / 문구 수정 ===== -->
 <section class="sec gift-sec" id="gift">
   <h2 class="title">GIFT SET</h2>
   <p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
   <div class="giftrow">
-    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=3" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
-    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=3" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
-    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=3" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=10" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=10" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
+    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=10" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
   </div>
 </section>
 
@@ -171,6 +204,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   </div>
 </section>
 
+<!-- ===== 하단 회사정보 수정 ===== -->
 <footer id="contact">
   <div class="footer-logo">ERNOA DEWIN</div>
   Premium Niche Perfume Hand Care<br>

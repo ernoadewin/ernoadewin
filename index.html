@@ -60,14 +60,14 @@ header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;
 .gift-sec{background:#faf7f2}
 .giftrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .gift{background:#f1ebe2;padding:42px;text-align:center;min-height:210px}
-.gift h3{font:23px Georgia,"Times New Roman",serif}
+.gift h3{font:23px Georgia,"Times New Roman",serif}.gift-img{width:100%;height:250px;object-fit:cover;object-position:center;display:block;margin:0 0 24px}.gift{padding:0 0 32px;overflow:hidden}.gift h3,.gift p{padding-left:24px;padding-right:24px}
 
 /* Exhibition */
 .exhibit{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
 .exhibit h2{font:36px Georgia,"Times New Roman",serif;margin:0 0 24px}
 .exhibit h3{margin:0 0 22px}
 .exhibit p{line-height:1.9;color:#444}
-.exhibit-img{width:100%;display:block;object-fit:cover;max-height:360px;border:1px solid #eee}
+.exhibit-img{width:100%;display:block;object-fit:contain;max-height:520px;border:1px solid #eee;background:#faf7f2}
 
 footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:1.8}
 .footer-logo{font:30px Georgia,"Times New Roman",serif;margin-bottom:10px}
@@ -152,9 +152,9 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   <h2 class="title">GIFT SET</h2>
   <p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
   <div class="giftrow">
-    <div class="gift"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
-    <div class="gift"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
-    <div class="gift"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_premium.jpg" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_season.jpg" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
+    <div class="gift"><img class="gift-img" src="gift_christmas.jpg" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
   </div>
 </section>
 
@@ -166,7 +166,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       <p>2026 뷰티&amp;헬스케어쇼에 참가하여 에르노아 듀인의 핸드크림과 다양한 선물 패키지를 선보였습니다.</p>
     </div>
     <div>
-      <img class="exhibit-img" src="exhibition.jpg" alt="2026 뷰티앤헬스케어쇼 에르노아 듀인 전시 부스">
+      <img class="exhibit-img" src="exhibition-collage.png" alt="2026 뷰티앤헬스케어쇼 에르노아 듀인 전시 부스">
     </div>
   </div>
 </section>

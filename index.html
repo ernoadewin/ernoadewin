@@ -151,9 +151,67 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
 
 .hero{width:100%;background:#f7f3ed}
 .hero-img{display:block;width:100%;height:auto}
+
+/* 은은하게 떨어지는 꽃잎 효과 */
+.petal-layer{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:9999;
+}
+.falling-petal{
+  position:absolute;
+  top:-45px;
+  width:18px;
+  height:12px;
+  border-radius:70% 30% 70% 30%;
+  background:rgba(247,218,210,.34);
+  filter:blur(.15px);
+  animation:petalFall linear infinite;
+  transform-origin:center;
+}
+.falling-petal:nth-child(2n){
+  background:rgba(255,244,232,.48);
+}
+.falling-petal:nth-child(3n){
+  width:14px;
+  height:10px;
+  background:rgba(242,205,201,.27);
+}
+@keyframes petalFall{
+  0%   { transform:translate3d(0,-8vh,0) rotate(0deg); opacity:0; }
+  10%  { opacity:.72; }
+  45%  { transform:translate3d(38px,45vh,0) rotate(150deg); }
+  75%  { transform:translate3d(-28px,78vh,0) rotate(275deg); }
+  100% { transform:translate3d(20px,110vh,0) rotate(390deg); opacity:.12; }
+}
+@media (prefers-reduced-motion: reduce){
+  .petal-layer{display:none;}
+}
+
 </style>
 </head>
 <body>
+
+<div class="petal-layer" aria-hidden="true">
+  <i class="falling-petal" style="left:4%;animation-duration:14s;animation-delay:-4s"></i>
+  <i class="falling-petal" style="left:10%;animation-duration:17s;animation-delay:-11s"></i>
+  <i class="falling-petal" style="left:17%;animation-duration:15s;animation-delay:-7s"></i>
+  <i class="falling-petal" style="left:24%;animation-duration:19s;animation-delay:-15s"></i>
+  <i class="falling-petal" style="left:31%;animation-duration:16s;animation-delay:-2s"></i>
+  <i class="falling-petal" style="left:38%;animation-duration:18s;animation-delay:-9s"></i>
+  <i class="falling-petal" style="left:45%;animation-duration:14.5s;animation-delay:-12s"></i>
+  <i class="falling-petal" style="left:52%;animation-duration:20s;animation-delay:-5s"></i>
+  <i class="falling-petal" style="left:59%;animation-duration:16.5s;animation-delay:-13s"></i>
+  <i class="falling-petal" style="left:66%;animation-duration:18.5s;animation-delay:-8s"></i>
+  <i class="falling-petal" style="left:72%;animation-duration:15.5s;animation-delay:-1s"></i>
+  <i class="falling-petal" style="left:78%;animation-duration:19.5s;animation-delay:-16s"></i>
+  <i class="falling-petal" style="left:85%;animation-duration:17.5s;animation-delay:-6s"></i>
+  <i class="falling-petal" style="left:91%;animation-duration:14.8s;animation-delay:-10s"></i>
+  <i class="falling-petal" style="left:96%;animation-duration:18.8s;animation-delay:-3s"></i>
+</div>
+
 
 <!-- ===== 상단 로고 / 메뉴 수정 ===== -->
 <!-- ===== 메인 이미지 수정: hero_final.png?v=200 ===== -->

@@ -20,7 +20,7 @@
 }
 /*
   이미지 교체 방법:
-  hero_text_only.png?v=130              = 메인 화면
+  hero.png              = 메인 화면
   lune_product.jpg      = 뤼느떼 본품
   rose_product.jpg      = 리 로젤르베일 본품
   gift_premium.jpg?v=10      = 프리미엄 선물세트
@@ -42,11 +42,59 @@ header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;
 .nav a{text-decoration:none;color:#111;font-size:14px;font-weight:600}
 
 /* MAIN: contain = no cropping. Black caps remain fully visible. */
-.hero{position:relative;
+.hero{
   width:100%;
   aspect-ratio:1536/1024;
   min-height:0;
-  background:#f7f3ed url("hero_text_only.png?v=130") center center/contain no-repeat;
+  position:relative;
+  overflow:hidden;
+  background:#f7f3ed url("hero.png") center center/contain no-repeat;
+}
+/* 원래 제품/꽃/배경 이미지는 그대로 유지하고, 왼쪽 기존 영문 문구 영역만 부드럽게 가립니다. */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:22%;
+  width:49%;
+  height:64%;
+  background:linear-gradient(90deg,
+    rgba(248,244,238,.99) 0%,
+    rgba(248,244,238,.985) 70%,
+    rgba(248,244,238,.88) 84%,
+    rgba(248,244,238,0) 100%);
+  pointer-events:none;
+}
+.hero-kcopy{
+  position:absolute;
+  z-index:2;
+  left:6.7%;
+  top:35%;
+  width:40%;
+  color:#222;
+}
+.hero-kcopy h1{
+  margin:0;
+  font-family:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  font-size:clamp(38px,4vw,66px);
+  font-weight:400;
+  line-height:1.38;
+  letter-spacing:-2px;
+}
+.hero-kcopy .gold-line{
+  width:52px;height:2px;background:#b5965c;margin:28px 0 34px;
+}
+.hero-kcopy p{
+  margin:0;
+  font-size:clamp(16px,1.45vw,24px);
+  line-height:2;
+  color:#3d3a36;
+}
+@media(max-width:900px){
+  .hero::before{width:58%}
+  .hero-kcopy{left:5%;top:32%;width:48%}
+  .hero-kcopy h1{font-size:clamp(26px,5vw,42px)}
+  .hero-kcopy p{font-size:14px;line-height:1.7}
 }
 
 .sec{padding:78px 6%;background:#fff}
@@ -56,11 +104,11 @@ header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;
 /* Product description with actual product photos */
 .products{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr .72fr;
+  grid-template-columns:1fr 1fr 1fr;
   gap:1px;
   background:#ddd;
 }
-.product-card,.care-card,.order-card{background:#faf7f2;min-height:470px}
+.product-card,.care-card{background:#faf7f2;min-height:470px}
 .product-card{
   display:grid;
   grid-template-columns:44% 56%;
@@ -74,10 +122,10 @@ header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;
   object-fit:contain;
   mix-blend-mode:multiply;
 }
-.product-copy h3,.care-card h3,.order-card h3{font:27px Georgia,"Times New Roman",serif;margin:0 0 18px}
-.product-copy p,.care-card p,.order-card p{line-height:1.8;color:#444;margin:0}
+.product-copy h3,.care-card h3{font:27px Georgia,"Times New Roman",serif;margin:0 0 18px}
+.product-copy p,.care-card p{line-height:1.8;color:#444;margin:0}
 .scent{margin-bottom:22px!important}
-.care-card{padding:54px 38px}.order-card{padding:54px 30px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-left:1px solid #ddd}.order-card .order-btn{margin-top:24px}
+.care-card{padding:54px 38px}
 
 /* Ingredients */
 .ingredients{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -147,29 +195,24 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   margin-top:0;
 }
 
-
-
-.hero{width:100%;background:#f7f3ed}
-.hero-img{display:block;width:100%;height:auto}
 </style>
 </head>
 <body>
 
 <!-- ===== 상단 로고 / 메뉴 수정 ===== -->
-<!-- ===== 메인 이미지 수정: hero_text_only.png?v=130 ===== -->
+<header>
+  <div class="logo">ERNOA DEWIN</div>
+  <nav class="nav">
+    <a href="#brand">BRAND</a>
+    <a href="#products">PRODUCTS</a>
+    <a href="#gift">GIFT</a>
+    <a href="#order">ORDER</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
 
-<section class="hero" aria-label="ERNOA DEWIN 메인 이미지">
-  <img id="heroImage" class="hero-img" src="hero_text_only.png?v=130" usemap="#heroMenuMap" alt="ERNOA DEWIN 메인 이미지">
-  <map name="heroMenuMap" id="heroMenuMap">
-    <area data-base="575,25,665,95" shape="rect" coords="575,25,665,95" href="#brand" alt="BRAND">
-    <area data-base="705,25,825,95" shape="rect" coords="705,25,825,95" href="#products" alt="PRODUCTS">
-    <area data-base="855,25,935,95" shape="rect" coords="855,25,935,95" href="#gift" alt="GIFT">
-    <area data-base="980,25,1095,95" shape="rect" coords="980,25,1095,95" href="#contact" alt="CONTACT">
-    <area data-base="1360,20,1515,100" shape="rect" coords="1360,20,1515,100"
-          href="https://smartstore.naver.com/ernoadewin" target="_blank" alt="제품구매">
-  </map>
-</section>
-
+<!-- ===== 메인 이미지 수정: hero.png ===== -->
+<section class="hero" aria-label="ERNOA DEWIN 메인 이미지"></section>
 
 <!-- ===== 제품 소개 / 본품 사진 / 설명 수정 ===== -->
 <section class="sec" id="brand">
@@ -184,7 +227,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       <div class="product-copy">
         <h3>Lune Tée</h3>
         <p class="scent"><b>뤼느떼</b><br>피오니 · 머스크</p>
-        <p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p>
+        <p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a>
       </div>
     </article>
 
@@ -194,23 +237,16 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       </div>
       <div class="product-copy">
         <h3>Le RoselVeil</h3>
-        <p class="scent"><b>리 로젤르베일</b><br>로즈 · 화이트 플로럴</p>
-        <p>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p>
+        <p class="scent"><b>리 로젤르베일</b><br>로즈 · 화이트플로럴</p>
+        <p>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a>
       </div>
     </article>
 
     <article class="care-card">
       <h3>FUNCTIONAL CARE</h3>
-      <p>미백 · 주름 개선 기능성</p>
+      <p>미백 · 주름개선 기능성</p>
       <p style="margin-top:12px">시어버터와 글리세린 등 보습 성분을 함유하여 촉촉한 손 관리를 도와줍니다.</p>
     </article>
-
-    <article class="order-card">
-      <h3>ORDER</h3>
-      <p>에르노아 듀인 제품을<br>온라인으로 주문하실 수 있습니다.</p>
-      <a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a>
-    </article>
-
   </div>
 </section>
 
@@ -222,7 +258,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
     <div class="ing"><b>시어버터</b>보습 · 영양</div>
     <div class="ing"><b>글리세린</b>수분 공급</div>
     <div class="ing"><b>나이아신아마이드</b>미백 · 피부톤 개선</div>
-    <div class="ing"><b>아데노신</b>주름 개선 기능성</div>
+    <div class="ing"><b>아데노신</b>주름개선 기능성</div>
   </div>
 </section>
 
@@ -231,9 +267,9 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   <h2 class="title">GIFT SET</h2>
   <p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
   <div class="giftrow">
-    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=10" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
-    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=10" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
-    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=10" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=10" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
+    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=10" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
+    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=10" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
   </div>
 </section>
 
@@ -251,7 +287,11 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
 </section>
 
 
-
+<section class="order-strip" id="order">
+  <h2>ORDER</h2>
+  <p>ERNOA DEWIN 제품은 네이버 스마트스토어에서 주문하실 수 있습니다.</p>
+  <a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">스마트스토어 주문하기</a>
+</section>
 
 <!-- ===== 하단 회사정보 수정 ===== -->
 <footer id="contact">
@@ -259,28 +299,6 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   Premium Niche Perfume Hand Care<br>
   © 2026 ERNOA DEWIN. All rights reserved.
 </footer>
-
-
-<script>
-(function(){
-  const baseW = 1536, baseH = 1024;
-  function resizeMap(){
-    const img = document.getElementById('heroImage');
-    if(!img) return;
-    const sx = img.clientWidth / baseW;
-    const sy = img.clientHeight / baseH;
-    document.querySelectorAll('#heroMenuMap area[data-base]').forEach(area=>{
-      const b = area.dataset.base.split(',').map(Number);
-      area.coords = [
-        Math.round(b[0]*sx), Math.round(b[1]*sy),
-        Math.round(b[2]*sx), Math.round(b[3]*sy)
-      ].join(',');
-    });
-  }
-  window.addEventListener('load', resizeMap);
-  window.addEventListener('resize', resizeMap);
-})();
-</script>
 
 </body>
 </html>

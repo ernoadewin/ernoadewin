@@ -1,34 +1,181 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ERNOA DEWIN</title>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ERNOA DEWIN</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#171717;background:#f7f3ed;font-family:Arial,"Noto Sans KR",sans-serif}
-header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff}.logo{font:40px Georgia,serif;letter-spacing:-2px}.nav{margin-left:auto;display:flex;gap:48px}.nav a{text-decoration:none;color:#111;font-size:14px;font-weight:600}
-.hero{height:min(760px,55vw);min-height:520px;background:url("hero.png") center/cover no-repeat}
-.sec{padding:78px 6%;background:#fff}.title{text-align:center;font:38px Georgia,serif;margin:0 0 12px}.sub{text-align:center;color:#555;margin-bottom:42px}
-.aboutgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#ddd}.box{background:#faf7f2;padding:46px 38px;min-height:245px}.box h3{font:26px Georgia,serif;margin:0 0 20px}.box p{line-height:1.8;color:#444}
-.ingredients{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.ing{padding:30px;background:#f7f3ed;text-align:center}.ing b{display:block;margin-bottom:8px}
-.giftrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gift{background:#f5efe7;padding:42px;text-align:center;min-height:210px}.gift h3{font:23px Georgia,serif}
-.exhibit{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center}.exhibit p{line-height:1.9;color:#444}.refimg{width:100%;display:block;border:1px solid #eee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#171717;background:#fff;font-family:Arial,"Noto Sans KR",sans-serif}
+header{height:96px;display:flex;align-items:center;padding:0 5%;background:#fff;border-bottom:1px solid #eee}
+.logo{font:40px Georgia,"Times New Roman",serif;letter-spacing:-2px}
+.nav{margin-left:auto;display:flex;gap:48px}
+.nav a{text-decoration:none;color:#111;font-size:14px;font-weight:600}
+
+/* MAIN: contain = no cropping. Black caps remain fully visible. */
+.hero{
+  width:100%;
+  aspect-ratio:1536/1024;
+  min-height:0;
+  background:#f7f3ed url("hero.png") center center/contain no-repeat;
+}
+
+.sec{padding:78px 6%;background:#fff}
+.title{text-align:center;font:38px Georgia,"Times New Roman",serif;margin:0 0 12px}
+.sub{text-align:center;color:#555;margin:0 0 42px}
+
+/* Product description with actual product photos */
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1px;
+  background:#ddd;
+}
+.product-card,.care-card{background:#faf7f2;min-height:470px}
+.product-card{
+  display:grid;
+  grid-template-columns:44% 56%;
+  align-items:center;
+  padding:32px 32px 32px 22px;
+}
+.product-photo-wrap{height:375px;display:flex;align-items:center;justify-content:center}
+.product-photo{
+  max-height:100%;
+  max-width:100%;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+.product-copy h3,.care-card h3{font:27px Georgia,"Times New Roman",serif;margin:0 0 18px}
+.product-copy p,.care-card p{line-height:1.8;color:#444;margin:0}
+.scent{margin-bottom:22px!important}
+.care-card{padding:54px 38px}
+
+/* Ingredients */
+.ingredients{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ing{padding:30px;background:#f7f3ed;text-align:center}
+.ing b{display:block;margin-bottom:8px}
+
+/* Gift */
+.gift-sec{background:#faf7f2}
+.giftrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gift{background:#f1ebe2;padding:42px;text-align:center;min-height:210px}
+.gift h3{font:23px Georgia,"Times New Roman",serif}
+
+/* Exhibition */
+.exhibit{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+.exhibit h2{font:36px Georgia,"Times New Roman",serif;margin:0 0 24px}
+.exhibit h3{margin:0 0 22px}
+.exhibit p{line-height:1.9;color:#444}
+.exhibit-img{width:100%;display:block;object-fit:cover;max-height:360px;border:1px solid #eee}
+
 footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:1.8}
-@media(max-width:850px){header{height:auto;flex-wrap:wrap;padding:22px}.logo{font-size:30px}.nav{width:100%;justify-content:center;gap:20px;margin-top:18px}.hero{height:520px}.aboutgrid,.ingredients,.giftrow,.exhibit{grid-template-columns:1fr}}
-</style></head><body>
-<header><div class="logo">ERNOA DEWIN</div><nav class="nav"><a href="#brand">BRAND</a><a href="#products">PRODUCTS</a><a href="#gift">GIFT</a><a href="#contact">CONTACT</a></nav></header>
-<section class="hero"></section>
+.footer-logo{font:30px Georgia,"Times New Roman",serif;margin-bottom:10px}
 
-<section class="sec" id="brand"><h2 class="title">ABOUT PRODUCT</h2><p class="sub">제품 소개</p>
-<div class="aboutgrid" id="products">
-<div class="box"><h3>Lune Tée</h3><p><b>뤼느떼</b><br>피오니 · 머스크<br><br>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p></div>
-<div class="box"><h3>Le RoselVeil</h3><p><b>리 로젤르베일</b><br>로즈 · 화이트플로럴<br><br>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p></div>
-<div class="box"><h3>FUNCTIONAL CARE</h3><p>미백 · 주름개선 기능성<br>시어버터와 글리세린 등 보습 성분을 함유하여 촉촉한 손 관리를 도와줍니다.</p></div>
-</div></section>
+@media(max-width:900px){
+  header{height:auto;flex-wrap:wrap;padding:22px}
+  .logo{font-size:30px}
+  .nav{width:100%;justify-content:center;gap:20px;margin-top:18px}
+  .products{grid-template-columns:1fr}
+  .product-card{grid-template-columns:40% 60%}
+  .ingredients,.giftrow,.exhibit{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .product-card{grid-template-columns:1fr;text-align:center}
+  .product-photo-wrap{height:310px}
+  .ingredients{grid-template-columns:1fr 1fr}
+  .hero{aspect-ratio:1536/1024}
+}
+</style>
+</head>
+<body>
 
-<section class="sec"><h2 class="title">KEY INGREDIENTS</h2><p class="sub">보습과 기능성을 위한 주요 성분</p>
-<div class="ingredients"><div class="ing"><b>시어버터</b>보습 · 영양</div><div class="ing"><b>글리세린</b>수분 공급</div><div class="ing"><b>나이아신아마이드</b>미백 · 피부톤 개선</div><div class="ing"><b>아데노신</b>주름개선 기능성</div></div></section>
+<header>
+  <div class="logo">ERNOA DEWIN</div>
+  <nav class="nav">
+    <a href="#brand">BRAND</a>
+    <a href="#products">PRODUCTS</a>
+    <a href="#gift">GIFT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
 
-<section class="sec" id="gift"><h2 class="title">GIFT SET</h2><p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
-<div class="giftrow"><div class="gift"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div><div class="gift"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div><div class="gift"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div></div></section>
+<section class="hero" aria-label="ERNOA DEWIN 메인 이미지"></section>
 
-<section class="sec"><div class="exhibit"><div><h2 style="font:36px Georgia,serif">2026 BEAUTY &amp;<br>HEALTH CARE SHOW</h2><h3>ERNOA DEWIN EXHIBITION</h3><p>2026 뷰티&amp;헬스케어쇼에 참가하여 에르노아 듀인의 핸드크림과 다양한 선물 패키지를 선보였습니다.</p></div>
-<div><img class="refimg" src="full_reference.png" alt="ERNOA DEWIN 브랜드 및 전시 이미지"></div></div></section>
+<section class="sec" id="brand">
+  <h2 class="title">ABOUT PRODUCT</h2>
+  <p class="sub">제품 소개</p>
 
-<footer id="contact"><div style="font:30px Georgia,serif;margin-bottom:10px">ERNOA DEWIN</div>Premium Niche Perfume Hand Care<br>© 2026 ERNOA DEWIN. All rights reserved.</footer>
-</body></html>
+  <div class="products" id="products">
+    <article class="product-card">
+      <div class="product-photo-wrap">
+        <img class="product-photo" src="lune_product.jpg" alt="Lune Tée 뤼느떼 핸드크림 본품">
+      </div>
+      <div class="product-copy">
+        <h3>Lune Tée</h3>
+        <p class="scent"><b>뤼느떼</b><br>피오니 · 머스크</p>
+        <p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-photo-wrap">
+        <img class="product-photo" src="rose_product.jpg" alt="Le RoselVeil 리 로젤르베일 핸드크림 본품">
+      </div>
+      <div class="product-copy">
+        <h3>Le RoselVeil</h3>
+        <p class="scent"><b>리 로젤르베일</b><br>로즈 · 화이트플로럴</p>
+        <p>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p>
+      </div>
+    </article>
+
+    <article class="care-card">
+      <h3>FUNCTIONAL CARE</h3>
+      <p>미백 · 주름개선 기능성</p>
+      <p style="margin-top:12px">시어버터와 글리세린 등 보습 성분을 함유하여 촉촉한 손 관리를 도와줍니다.</p>
+    </article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="title">KEY INGREDIENTS</h2>
+  <p class="sub">보습과 기능성을 위한 주요 성분</p>
+  <div class="ingredients">
+    <div class="ing"><b>시어버터</b>보습 · 영양</div>
+    <div class="ing"><b>글리세린</b>수분 공급</div>
+    <div class="ing"><b>나이아신아마이드</b>미백 · 피부톤 개선</div>
+    <div class="ing"><b>아데노신</b>주름개선 기능성</div>
+  </div>
+</section>
+
+<section class="sec gift-sec" id="gift">
+  <h2 class="title">GIFT SET</h2>
+  <p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
+  <div class="giftrow">
+    <div class="gift"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
+    <div class="gift"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
+    <div class="gift"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="exhibit">
+    <div>
+      <h2>2026 BEAUTY &amp;<br>HEALTH CARE SHOW</h2>
+      <h3>ERNOA DEWIN EXHIBITION</h3>
+      <p>2026 뷰티&amp;헬스케어쇼에 참가하여 에르노아 듀인의 핸드크림과 다양한 선물 패키지를 선보였습니다.</p>
+    </div>
+    <div>
+      <img class="exhibit-img" src="exhibition.jpg" alt="2026 뷰티앤헬스케어쇼 에르노아 듀인 전시 부스">
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-logo">ERNOA DEWIN</div>
+  Premium Niche Perfume Hand Care<br>
+  © 2026 ERNOA DEWIN. All rights reserved.
+</footer>
+
+</body>
+</html>

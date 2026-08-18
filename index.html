@@ -148,52 +148,28 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
 }
 
 
-.hero-nav-overlay{position:absolute;inset:0;z-index:8;pointer-events:none}
-.hero-nav-overlay a{position:absolute;top:1.5%;height:7%;pointer-events:auto;text-indent:-9999px;overflow:hidden}
-.hero-nav-overlay .brand{left:36%;width:8%}
-.hero-nav-overlay .products{left:48%;width:10%}
-.hero-nav-overlay .gift{left:61.5%;width:6%}
-.hero-nav-overlay .contact{left:70%;width:8%}
-.hero-purchase{
-  position:absolute;
-  top:1.45%;
-  right:2.4%;
-  z-index:9;
-  width:auto;
-  min-width:0;
-  height:auto;
-  padding:8px 10px;
-  display:block;
-  background:transparent;
-  color:#171717;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.02em;
-  border:0;
-  white-space:nowrap
-}
-.hero-purchase:hover{text-decoration:underline;background:transparent}
-@media(max-width:900px){
-  .hero-purchase{right:1.5%;top:1.2%;font-size:11px;padding:5px}
-}
 
+.hero{width:100%;background:#f7f3ed}
+.hero-img{display:block;width:100%;height:auto}
 </style>
 </head>
 <body>
 
 <!-- ===== 상단 로고 / 메뉴 수정 ===== -->
 <!-- ===== 메인 이미지 수정: hero.png ===== -->
-<section class="hero" aria-label="ERNOA DEWIN 메인 이미지">
 
-<div class="hero-nav-overlay" aria-label="메인 메뉴">
-  <a class="brand" href="#brand">BRAND</a>
-  <a class="products" href="#products">PRODUCTS</a>
-  <a class="gift" href="#gift">GIFT</a>
-  <a class="contact" href="#contact">CONTACT</a>
-</div>
-<a class="hero-purchase" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">제품구매</a>
+<section class="hero" aria-label="ERNOA DEWIN 메인 이미지">
+  <img id="heroImage" class="hero-img" src="hero.png?v=20" usemap="#heroMenuMap" alt="ERNOA DEWIN 메인 이미지">
+  <map name="heroMenuMap" id="heroMenuMap">
+    <area data-base="575,25,665,95" shape="rect" coords="575,25,665,95" href="#brand" alt="BRAND">
+    <area data-base="705,25,825,95" shape="rect" coords="705,25,825,95" href="#products" alt="PRODUCTS">
+    <area data-base="855,25,935,95" shape="rect" coords="855,25,935,95" href="#gift" alt="GIFT">
+    <area data-base="980,25,1095,95" shape="rect" coords="980,25,1095,95" href="#contact" alt="CONTACT">
+    <area data-base="1360,20,1515,100" shape="rect" coords="1360,20,1515,100"
+          href="https://smartstore.naver.com/ernoadewin" target="_blank" alt="제품구매">
+  </map>
 </section>
+
 
 <!-- ===== 제품 소개 / 본품 사진 / 설명 수정 ===== -->
 <section class="sec" id="brand">
@@ -283,6 +259,28 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   Premium Niche Perfume Hand Care<br>
   © 2026 ERNOA DEWIN. All rights reserved.
 </footer>
+
+
+<script>
+(function(){
+  const baseW = 1536, baseH = 1024;
+  function resizeMap(){
+    const img = document.getElementById('heroImage');
+    if(!img) return;
+    const sx = img.clientWidth / baseW;
+    const sy = img.clientHeight / baseH;
+    document.querySelectorAll('#heroMenuMap area[data-base]').forEach(area=>{
+      const b = area.dataset.base.split(',').map(Number);
+      area.coords = [
+        Math.round(b[0]*sx), Math.round(b[1]*sy),
+        Math.round(b[2]*sx), Math.round(b[3]*sy)
+      ].join(',');
+    });
+  }
+  window.addEventListener('load', resizeMap);
+  window.addEventListener('resize', resizeMap);
+})();
+</script>
 
 </body>
 </html>

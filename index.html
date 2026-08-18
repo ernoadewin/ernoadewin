@@ -114,6 +114,39 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   .ingredients{grid-template-columns:1fr 1fr}
   .hero{aspect-ratio:1536/1024}
 }
+
+.order-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:150px;
+  padding:13px 22px;
+  margin-top:18px;
+  background:#171717;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:.02em;
+  transition:.2s ease;
+}
+.order-btn:hover{opacity:.78}
+.order-strip{
+  padding:58px 6%;
+  background:#171717;
+  color:#fff;
+  text-align:center;
+}
+.order-strip h2{
+  font:34px Georgia,"Times New Roman",serif;
+  margin:0 0 12px;
+}
+.order-strip p{margin:0 0 22px;color:#ddd}
+.order-strip .order-btn{
+  background:#fff;
+  color:#171717;
+  margin-top:0;
+}
+
 </style>
 </head>
 <body>
@@ -125,6 +158,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
     <a href="#brand">BRAND</a>
     <a href="#products">PRODUCTS</a>
     <a href="#gift">GIFT</a>
+    <a href="#order">ORDER</a>
     <a href="#contact">CONTACT</a>
   </nav>
 </header>
@@ -145,7 +179,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       <div class="product-copy">
         <h3>Lune Tée</h3>
         <p class="scent"><b>뤼느떼</b><br>피오니 · 머스크</p>
-        <p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p>
+        <p>니치 퍼퓸에서 영감을 받은 깊고 우아한 향의 프리미엄 핸드크림입니다.</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a>
       </div>
     </article>
 
@@ -156,7 +190,7 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       <div class="product-copy">
         <h3>Le RoselVeil</h3>
         <p class="scent"><b>리 로젤르베일</b><br>로즈 · 화이트플로럴</p>
-        <p>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p>
+        <p>우아한 로즈와 화이트 플로럴 향을 담은 프리미엄 핸드크림입니다.</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a>
       </div>
     </article>
 
@@ -185,9 +219,9 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
   <h2 class="title">GIFT SET</h2>
   <p class="sub">에르노아 듀인만의 우아한 선물 패키지</p>
   <div class="giftrow">
-    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=10" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p></div>
-    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=10" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p></div>
-    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=10" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p></div>
+    <div class="gift"><img class="gift-img" src="gift_premium.jpg?v=10" alt="ERNOA DEWIN 메인 선물세트"><h3>PREMIUM GIFT SET</h3><p>메인 선물세트<br>소중한 분에게 마음을 전하는 프리미엄 패키지</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
+    <div class="gift"><img class="gift-img" src="gift_season.jpg?v=10" alt="ERNOA DEWIN 명절 선물세트"><h3>SEASON GIFT SET</h3><p>명절 선물세트<br>특별한 시즌을 위한 우아한 선물</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
+    <div class="gift"><img class="gift-img" src="gift_christmas.jpg?v=10" alt="ERNOA DEWIN 성탄절 선물세트"><h3>CHRISTMAS GIFT SET</h3><p>성탄절 선물세트<br>따뜻한 마음을 전하는 시즌 패키지</p><a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">주문하기</a></div>
   </div>
 </section>
 
@@ -202,6 +236,13 @@ footer{text-align:center;background:#171717;color:#eee;padding:42px;line-height:
       <img class="exhibit-img" src="exhibition-collage.png" alt="2026 뷰티앤헬스케어쇼 에르노아 듀인 전시 부스">
     </div>
   </div>
+</section>
+
+
+<section class="order-strip" id="order">
+  <h2>ORDER</h2>
+  <p>ERNOA DEWIN 제품은 네이버 스마트스토어에서 주문하실 수 있습니다.</p>
+  <a class="order-btn" href="https://smartstore.naver.com/ernoadewin" target="_blank" rel="noopener">스마트스토어 주문하기</a>
 </section>
 
 <!-- ===== 하단 회사정보 수정 ===== -->
